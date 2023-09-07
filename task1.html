@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Page</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <div>
+        <h1 data-testid="Tessy Omoruyi">Your Slack Name</h1>
+        <img src="slack-profile-picture.jpeg" alt="Tessy Omoruyi" data-testid="slackDisplayImage">
+        <p data-testid="currentDayOfTheWeek"></p>
+        <p data-testid="currentUTCTime"></p>
+        <p data-testid="myTrack">Frontend</p>
+        <a href="https://github.com/OmoruyiTessy/HNG" data-testid="githubURL">GitHub Repository</a>
+    </div>
+
+    <script>
+        // JavaScript code to display current day of the week and UTC time
+        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const currentDate = new Date();
+        const currentDay = daysOfWeek[currentDate.getUTCDay()];
+        const currentUTCTime = currentDate.toUTCString();
+
+        // Update the HTML elements with the data-testid attributes
+        document.querySelector('[data-testid="currentDayOfTheWeek"]').textContent = `Current Day: ${currentDay}`;
+        document.querySelector('[data-testid="currentUTCTime"]').textContent = `Current UTC Time: ${currentUTCTime}`;
+    </script>
+</body>
+</html>
